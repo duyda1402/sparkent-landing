@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.webp
+Allow: *.webm
+
+Sitemap: https://spark-hq.wegic.net/sitemap.xml

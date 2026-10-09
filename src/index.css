@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(124, 58, 237, 0.16);
+    color: #0A0A0A;
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F6F6F4;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(10, 10, 10, 0.18);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7C3AED;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY SYSTEM
+───────────────────────────────────────────── */
+
+/* Section label — the quiet voice above headings */
+.label-micro {
+  font-size: 9px;
+  letter-spacing: 0.42em;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: rgba(139,92,255,0.85);
+}
+
+/* Section heading */
+.heading-section {
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: #F2F2F2;
+}
+
+/* Body small */
+.body-quiet {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(160,160,165,0.85);
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────────
+   GRADIENT UTILITIES
+───────────────────────────────────────────── */
+
+.spark-gradient-text {
+  background: linear-gradient(135deg, #F2F2F2 20%, #A87FFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.spark-purple-gradient {
+  background: linear-gradient(135deg, #8B5CFF 0%, #FF8BA7 100%);
+}
+
+/* ─────────────────────────────────────────────
+   HOVER EFFECTS
+───────────────────────────────────────────── */
+
+.spark-glow-hover {
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spark-glow-hover:hover {
+  box-shadow: 0 0 45px rgba(139, 92, 255, 0.22), 0 0 80px rgba(139, 92, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────
+   NAVIGATION
+───────────────────────────────────────────── */
+
+/* Premium nav link — orbits the logo crest */
+.nav-link {
+  font-size: 9.5px;
+  letter-spacing: 0.32em;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: rgba(248,248,248,0.35);
+  transition: color 0.55s cubic-bezier(0.16,1,0.3,1);
+  white-space: nowrap;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: rgba(139,92,255,0.55);
+  transition: width 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+.nav-link:hover {
+  color: rgba(248,248,248,0.9);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────
+   GLASS CARD
+───────────────────────────────────────────── */
+
+.glass-card {
+  background: rgba(255,255,255,0.025);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.055);
+}
+
+.glass-card:hover {
+  background: rgba(255,255,255,0.038);
+  border-color: rgba(139,92,255,0.18);
+}
+
+/* ─────────────────────────────────────────────
+   CINEMATIC VIDEO MASK
+───────────────────────────────────────────── */
+
+.video-mask {
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9) 50%, transparent 100%);
+}
+
+/* ─────────────────────────────────────────────
+   GLASS PURPLE WAVE — hero bottom accent
+───────────────────────────────────────────── */
+
+.wave-glass {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 320px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.wave-glass::before {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  height: 260px;
+  background: radial-gradient(ellipse 60% 100% at 50% 100%,
+    rgba(139,92,255,0.09) 0%,
+    rgba(139,92,255,0.04) 40%,
+    transparent 75%
+  );
+  filter: blur(1px);
+}
+
+.wave-glass::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(to top, rgba(8,8,8,1) 0%, rgba(8,8,8,0.7) 50%, transparent 100%);
+}
+
+/* ─────────────────────────────────────────────
+   SECTION DIVIDER LINE
+───────────────────────────────────────────── */
+
+.divider-glow {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(139,92,255,0.18) 30%, rgba(139,92,255,0.35) 50%, rgba(139,92,255,0.18) 70%, transparent 100%);
+}
+
+/* ─────────────────────────────────────────────
+   FORM INPUTS — premium underline style
+───────────────────────────────────────────── */
+
+.input-luxury {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 0;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #F2F2F2;
+  transition: border-color 0.5s cubic-bezier(0.16,1,0.3,1);
+  outline: none;
+}
+
+.input-luxury::placeholder {
+  color: rgba(255,255,255,0.18);
+}
+
+.input-luxury:focus {
+  border-bottom-color: rgba(139,92,255,0.7);
+}
+
+/* ─────────────────────────────────────────────
+   KEYFRAME ANIMATIONS
+───────────────────────────────────────────── */
+
+/* Slow ambient glow pulse — used on cards, accents */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 0.7; transform: scale(1.08); }
+}
+
+/* Subtle float — used on hero elements */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}
+
+/* Shimmer scan — luxury CTA hover */
+@keyframes shimmer-scan {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(250%) skewX(-15deg); }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 5s cubic-bezier(0.4,0,0.6,1) infinite;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.group\/cta:hover .shimmer-sweep::after {
+  animation: shimmer-scan 0.75s ease forwards;
+}
+
+/* ─────────────────────────────────────────────
+   PILLAR ROWS — hover lift micro-interaction
+───────────────────────────────────────────── */
+
+.pillar-row {
+  transition: background 0.6s cubic-bezier(0.16,1,0.3,1), padding-left 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+.pillar-row:hover {
+  background: rgba(139,92,255,0.018);
+  padding-left: 6px;
+}
+
+/* ─────────────────────────────────────────────
+   NOISE TEXTURE — very subtle film grain
+───────────────────────────────────────────── */
+
+.bg-noise::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
