@@ -1,6 +1,6 @@
 // Content for the four intro pillars (LEARN / CREATE / DEVELOP / RELEASE)
 // and their sub-pages at /about/:pillar.
-// Values marked `placeholder: true` (or wrapped in [brackets]) are waiting for client copy.
+// Facts summarize descriptions already used on these pages; prices, hours and terms are omitted.
 // Note: ASSETS.studioVocalBooth shows a piano room and ASSETS.studioMastering shows a
 // performer portrait, so captions below describe what the photos actually show.
 
@@ -24,7 +24,6 @@ export interface PillarFact {
   labelEn: string;
   valueVi: string;
   valueEn: string;
-  placeholder?: boolean;
 }
 
 export interface PillarData {
@@ -87,8 +86,8 @@ export const PILLARS: PillarData[] = [
     facts: [
       { labelVi: 'DÀNH CHO', labelEn: 'FOR', valueVi: 'Người mới bắt đầu, ca sĩ, nhạc công, nhà sản xuất và nghệ sĩ độc lập.', valueEn: 'Beginners, singers, musicians, producers and independent artists.' },
       { labelVi: 'BỘ MÔN', labelEn: 'DISCIPLINES', valueVi: 'Piano, thanh nhạc, guitar, music producer, mix & master.', valueEn: 'Piano, vocal, guitar, music production, mix & master.' },
-      { labelVi: 'HÌNH THỨC', labelEn: 'FORMAT', valueVi: '[Lớp 1 kèm 1 / nhóm nhỏ]', valueEn: '[One-to-one / small group]', placeholder: true },
-      { labelVi: 'LỘ TRÌNH', labelEn: 'PATHWAY', valueVi: '[Số cấp độ, thời lượng mỗi khóa]', valueEn: '[Levels and course length]', placeholder: true },
+      { labelVi: 'HÌNH THỨC', labelEn: 'FORMAT', valueVi: 'Học kỹ thuật, thực hành tại phòng thu và rèn luyện biểu diễn.', valueEn: 'Technique, studio practice and performance training.' },
+      { labelVi: 'LỘ TRÌNH', labelEn: 'PATHWAY', valueVi: 'Từ nền tảng đến sản xuất và biểu diễn thực tế.', valueEn: 'From fundamentals to real production and performance.' },
     ],
     primaryCta: ACADEMY_LINK,
     secondaryCta: TRIAL_BOOKING,
@@ -120,8 +119,8 @@ export const PILLARS: PillarData[] = [
     facts: [
       { labelVi: 'DỊCH VỤ', labelEn: 'SERVICES', valueVi: 'Thu âm, sản xuất, mix & master, hình ảnh và MV.', valueEn: 'Recording, production, mix & master, visuals and music videos.' },
       { labelVi: 'THIẾT BỊ', labelEn: 'EQUIPMENT', valueVi: 'Signal path Neve, micro Neumann, vocal booth riêng.', valueEn: 'Neve signal path, Neumann microphones, dedicated vocal booth.' },
-      { labelVi: 'BẢNG GIÁ', labelEn: 'RATES', valueVi: '[Theo giờ / theo dự án]', valueEn: '[Hourly / per project]', placeholder: true },
-      { labelVi: 'GIỜ MỞ CỬA', labelEn: 'HOURS', valueVi: '[Giờ hoạt động của phòng thu]', valueEn: '[Studio opening hours]', placeholder: true },
+      { labelVi: 'QUY TRÌNH', labelEn: 'PROCESS', valueVi: 'Từ ý tưởng, sản xuất và thu âm đến mix & master.', valueEn: 'From idea and production through recording, mix and master.' },
+      { labelVi: 'HÌNH ẢNH', labelEn: 'VISUALS', valueVi: 'MV, visualizer và hình ảnh truyền thông.', valueEn: 'Music videos, visualizers and promotional imagery.' },
     ],
     primaryCta: STUDIO_BOOKING,
     secondaryCta: WORKS_LINK,
@@ -153,8 +152,8 @@ export const PILLARS: PillarData[] = [
     facts: [
       { labelVi: 'DÀNH CHO', labelEn: 'FOR', valueVi: 'Ca sĩ, nhạc sĩ và nghệ sĩ độc lập muốn đi đường dài.', valueEn: 'Singers, songwriters and independent artists in it for the long run.' },
       { labelVi: 'TUYỂN CHỌN', labelEn: 'SELECTION', valueVi: 'Qua buổi thử giọng tại Spark.', valueEn: 'Through an audition at Spark.' },
-      { labelVi: 'THỜI GIAN', labelEn: 'DURATION', valueVi: '[Thời lượng chương trình]', valueEn: '[Programme length]', placeholder: true },
-      { labelVi: 'HỢP TÁC', labelEn: 'PARTNERSHIP', valueVi: '[Điều khoản với Spark Label]', valueEn: '[Spark Label terms]', placeholder: true },
+      { labelVi: 'ĐÀO TẠO', labelEn: 'TRAINING', valueVi: 'Thanh nhạc, sáng tác và biểu diễn tại Spark Academy.', valueEn: 'Vocals, songwriting and performance at Spark Academy.' },
+      { labelVi: 'ĐỊNH HƯỚNG', labelEn: 'PATHWAY', valueVi: 'Định hình bản sắc, phát hành và xây dựng sự nghiệp dài lâu.', valueEn: 'Shape an identity, release music and build a lasting career.' },
     ],
     primaryCta: AUDITION_BOOKING,
     secondaryCta: ARTISTS_LINK,
@@ -185,9 +184,9 @@ export const PILLARS: PillarData[] = [
     heroFocus: '50% 50%',
     facts: [
       { labelVi: 'HỖ TRỢ', labelEn: 'SUPPORT', valueVi: 'Kế hoạch ra mắt, MV và truyền thông.', valueEn: 'Launch planning, music videos and promotion.' },
-      { labelVi: 'PHÂN PHỐI', labelEn: 'DISTRIBUTION', valueVi: '[Danh sách nền tảng nhạc số]', valueEn: '[List of digital platforms]', placeholder: true },
-      { labelVi: 'DÀNH CHO', labelEn: 'FOR', valueVi: '[Nghệ sĩ Spark Label / độc lập]', valueEn: '[Spark Label / independent artists]', placeholder: true },
-      { labelVi: 'BÁO CÁO', labelEn: 'REPORTING', valueVi: '[Tần suất báo cáo số liệu]', valueEn: '[Reporting frequency]', placeholder: true },
+      { labelVi: 'PHÂN PHỐI', labelEn: 'DISTRIBUTION', valueVi: 'Phát hành trên các nền tảng nhạc số.', valueEn: 'Release across digital music platforms.' },
+      { labelVi: 'LỘ TRÌNH', labelEn: 'PATHWAY', valueVi: 'Đồng hành trước, trong và sau ngày ra mắt.', valueEn: 'Support before, during and after release day.' },
+      { labelVi: 'SỐ LIỆU', labelEn: 'ANALYTICS', valueVi: 'Theo dõi số liệu nghe và khán giả.', valueEn: 'Track listening and audience analytics.' },
     ],
     primaryCta: RELEASE_CONTACT,
     secondaryCta: WORKS_LINK,

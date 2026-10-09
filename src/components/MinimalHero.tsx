@@ -70,10 +70,10 @@ export const MinimalHero: React.FC<MinimalHeroProps> = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-black/10 bg-white/95 backdrop-blur-md shadow-sm"
+          className="inline-flex w-max max-w-[calc(100vw-2rem)] items-center gap-2 mb-6 px-3 sm:px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-md shadow-sm"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#7C3AED]" />
-          <span className="font-condensed text-[11px] tracking-[0.28em] uppercase text-[#0A0A0A] font-bold">
+          <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-white" />
+          <span className="whitespace-nowrap font-condensed text-[clamp(10px,2.8vw,11px)] tracking-[0.14em] sm:tracking-[0.28em] uppercase text-[#F4F1E8] font-bold">
             SPARK ENTERTAINMENT · MUSIC ECOSYSTEM
           </span>
         </motion.div>
