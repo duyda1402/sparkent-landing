@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide the Wegic branding badge injected outside the React app. */
+#wegic-branding-badge {
+  display: none !important;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

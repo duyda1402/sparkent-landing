@@ -141,7 +141,7 @@ const FactsStrip: React.FC<{ pillar: PillarData }> = ({ pillar }) => {
         {pillar.facts.map((fact, i) => (
           <div key={fact.labelEn} className={`py-8 lg:py-11 border-[#E5E5E5] ${FACT_CELL[i] ?? ''}`}>
             <dt className="font-condensed text-xs font-bold tracking-[0.28em] text-[#7C3AED]">{vi ? fact.labelVi : fact.labelEn}</dt>
-            <dd className={`mt-3 leading-relaxed ${fact.placeholder ? 'font-mono text-sm text-[#666666]' : 'text-base md:text-[17px] text-[#0A0A0A]'}`}>
+            <dd className="mt-3 text-base md:text-[17px] leading-relaxed text-[#0A0A0A]">
               {vi ? fact.valueVi : fact.valueEn}
             </dd>
           </div>
