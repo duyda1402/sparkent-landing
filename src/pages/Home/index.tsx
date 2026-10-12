@@ -34,22 +34,22 @@ export default function HomePage() {
       {/* 03 THE SPARK ECOSYSTEM: Studio · Academy · Label */}
       <MinimalEcosystem />
 
-      {/* 04 CULTURE / MANIFESTO */}
+      {/* CULTURE / MANIFESTO — unnumbered supporting section */}
       <SparkManifesto />
 
-      {/* 05 SELECTED WORKS — temporarily hidden until project information is complete. */}
+      {/* SELECTED WORKS — temporarily hidden until project information is complete. */}
       {/* <MinimalWorks /> */}
 
-      {/* 06 ARTISTS */}
+      {/* 04 ARTISTS */}
       <MinimalArtists />
 
-      {/* 07 JOURNAL — temporarily hidden; uncomment to restore. */}
+      {/* JOURNAL — temporarily hidden; uncomment to restore. */}
       {/* <SparkJournal /> */}
 
-      {/* 08 FINAL CTA */}
+      {/* 05 FINAL CTA */}
       <MinimalContact />
 
-      {/* 09 FOOTER */}
+      {/* FOOTER */}
       <MinimalFooter />
     </div>
   );

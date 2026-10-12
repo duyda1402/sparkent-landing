@@ -29,6 +29,23 @@ export const MinimalNav: React.FC<MinimalNavProps> = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMobileMenuOpen(false);
+    };
+    desktop.addEventListener('change', closeOnDesktop);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      desktop.removeEventListener('change', closeOnDesktop);
+    };
+  }, [mobileMenuOpen]);
+
   const navItems = lang === 'vi' ? [
     { label: 'TRANG CHỦ', href: isHomePage ? '#hero' : '/' },
     { label: 'GIỚI THIỆU', href: isHomePage ? '#intro' : '/#intro' },
@@ -141,6 +158,8 @@ export const MinimalNav: React.FC<MinimalNavProps> = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-1.5 text-white hover:text-[#7C3AED] transition-colors shrink-0"
               aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -152,11 +171,12 @@ export const MinimalNav: React.FC<MinimalNavProps> = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#080808]/98 backdrop-blur-2xl flex flex-col justify-between px-8 py-28 lg:hidden"
+            className="fixed inset-0 z-40 bg-[#080808]/[0.98] backdrop-blur-2xl overflow-y-auto overscroll-contain flex flex-col justify-between gap-10 px-8 py-28 lg:hidden"
           >
             <div className="flex flex-col space-y-7">
               {navItems.map((item, idx) => (
@@ -170,7 +190,7 @@ export const MinimalNav: React.FC<MinimalNavProps> = () => {
                   className="font-condensed text-3xl font-extrabold tracking-[-0.01em] text-white hover:text-[#7C3AED] transition-colors uppercase flex items-center justify-between"
                 >
                   <span>{item.label}</span>
-                  <span className="text-xs text-white/40 font-mono tracking-widest">0{idx + 1}</span>
+                  <span className="text-xs text-white/60 font-mono tracking-widest">0{idx + 1}</span>
                 </motion.a>
               ))}
             </div>

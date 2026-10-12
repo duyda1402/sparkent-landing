@@ -34,7 +34,7 @@ export const SparkManifesto: React.FC<SparkManifestoProps> = () => {
           transition={{ duration: 1 }}
           className="font-condensed text-xs tracking-[0.32em] uppercase text-[#7C3AED] block mb-8 font-bold"
         >
-          {lang === 'vi' ? '04 / TUYÊN NGÔN HỆ SINH THÁI' : '04 / MANIFESTO & VISION'}
+          {lang === 'vi' ? 'TUYÊN NGÔN HỆ SINH THÁI' : 'MANIFESTO & VISION'}
         </motion.span>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-end">
