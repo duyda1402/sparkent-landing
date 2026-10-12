@@ -58,7 +58,7 @@ export const MinimalContact: React.FC<MinimalContactProps> = () => {
           transition={{ duration: 1 }}
           className="font-condensed text-xs tracking-[0.32em] uppercase text-[#7C3AED] block mb-8 font-bold"
         >
-          {lang === 'vi' ? '07 / LIÊN HỆ HỢP TÁC' : '07 / FINAL CTA'}
+          {lang === 'vi' ? '05 / LIÊN HỆ HỢP TÁC' : '05 / FINAL CTA'}
         </motion.span>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
