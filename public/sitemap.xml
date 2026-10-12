@@ -31,18 +31,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spark-hq.wegic.net/artists/minh</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://spark-hq.wegic.net/artists/lyra</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://spark-hq.wegic.net/projects/neon-horizons</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>

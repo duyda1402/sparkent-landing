@@ -33,17 +33,17 @@ export const MinimalNav: React.FC<MinimalNavProps> = () => {
     { label: 'TRANG CHỦ', href: isHomePage ? '#hero' : '/' },
     { label: 'GIỚI THIỆU', href: isHomePage ? '#intro' : '/#intro' },
     { label: 'HỆ SINH THÁI', href: isHomePage ? '#ecosystem' : '/#ecosystem' },
-    { label: 'DỰ ÁN', href: isHomePage ? '#works' : '/#works' },
+    // { label: 'DỰ ÁN', href: isHomePage ? '#works' : '/#works' }, // Restore when project content is ready.
     { label: 'NGHỆ SĨ', href: isHomePage ? '#artists' : '/#artists' },
-    { label: 'TIN TỨC', href: isHomePage ? '#journal' : '/#journal' },
+    // { label: 'TIN TỨC', href: isHomePage ? '#journal' : '/#journal' }, // Restore when news content is ready.
     { label: 'LIÊN HỆ', href: isHomePage ? '#contact' : '/#contact' },
   ] : [
     { label: 'HOME', href: isHomePage ? '#hero' : '/' },
     { label: 'ABOUT', href: isHomePage ? '#intro' : '/#intro' },
     { label: 'ECOSYSTEM', href: isHomePage ? '#ecosystem' : '/#ecosystem' },
-    { label: 'WORKS', href: isHomePage ? '#works' : '/#works' },
+    // { label: 'WORKS', href: isHomePage ? '#works' : '/#works' }, // Restore when project content is ready.
     { label: 'ARTISTS', href: isHomePage ? '#artists' : '/#artists' },
-    { label: 'JOURNAL', href: isHomePage ? '#journal' : '/#journal' },
+    // { label: 'JOURNAL', href: isHomePage ? '#journal' : '/#journal' }, // Restore when news content is ready.
     { label: 'CONTACT', href: isHomePage ? '#contact' : '/#contact' },
   ];
 

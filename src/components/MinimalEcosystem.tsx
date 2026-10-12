@@ -4,7 +4,7 @@ import { ASSETS } from '@/lib/data';
 import { ImageWithFallback } from './ImageWithFallback';
 import { useLanguage, Lang } from '@/lib/LanguageContext';
 import { useBookingModal } from '@/lib/BookingContext';
-import { Link } from 'react-router-dom';
+import { StudioEquipmentSpotlight } from './StudioEquipmentSpotlight';
 
 interface MinimalEcosystemProps {
   lang?: Lang;
@@ -20,39 +20,32 @@ export const MinimalEcosystem: React.FC<MinimalEcosystemProps> = () => {
       id: 'academy',
       name: 'SPARK ACADEMY',
       stage: lang === 'vi' ? 'GIAI ĐOẠN 01 — HỌC HỎI & PHÁT TRIỂN' : 'STAGE 01 — LEARN & DEVELOP',
-      tags: lang === 'vi'
-        ? 'PIANO · THANH NHẠC · GUITAR · MUSIC PRODUCER · MIX & MASTER'
-        : 'PIANO · VOCAL · GUITAR · MUSIC PRODUCER · MIX & MASTER',
+      tags: 'INSTRUMENTS · VOCAL · MUSIC PRODUCTION · MIXING & MASTERING',
       positioning: lang === 'vi'
-        ? 'ĐIỂM KHỞI ĐẦU BƯỚC VÀO HỆ SINH THÁI ÂM NHẠC.'
-        : 'THE ENTRY POINT TO THE SPARK MUSIC ECOSYSTEM.',
+        ? 'NỀN TẢNG VỮNG VÀNG. BẢN SẮC RIÊNG.'
+        : 'A SOLID FOUNDATION. YOUR OWN IDENTITY.',
       desc: lang === 'vi'
-        ? 'Không gian học tập âm nhạc dành cho người trẻ: từ nền tảng phím đàn, thanh nhạc, guitar đến lộ trình trở thành Music Producer và làm chủ kỹ nghệ Mix & Master hoàn thiện âm thanh. Học — Thực hành — Sáng tạo — Biểu diễn.'
-        : 'Contemporary music education for the next generation: from instrument fluency and vocal development to dedicated Music Producer and Mix & Master pathways. Learn · Practice · Create · Perform.',
+        ? 'Không gian đào tạo âm nhạc dành cho mọi lứa tuổi — từ những bước đầu khám phá âm nhạc đến phát triển kỹ năng chuyên sâu. Kết hợp đào tạo bài bản, thực hành cùng hệ thống nhạc cụ và thiết bị studio cao cấp, Spark Academy đồng hành cùng bạn trên hành trình học hỏi, sáng tạo và phát triển chất riêng.'
+        : 'A music education space for all ages — from the first steps of discovering music to developing advanced skills. Combining structured learning with hands-on practice using premium instruments and studio equipment, Spark Academy supports your journey to learn, create and develop your own sound.',
       img: ASSETS.studioAcoustic,
-      ctaText: lang === 'vi' ? 'KHÁM PHÁ SPARK ACADEMY →' : 'EXPLORE ACADEMY →',
-      action: null,
-      isRoute: true,
-      href: '/academy',
+      ctaText: lang === 'vi' ? 'ĐẶT LỊCH SPARK ACADEMY →' : 'BOOK SPARK ACADEMY →',
+      action: () => openBooking(),
     },
     {
       num: '02',
       id: 'studio',
       name: 'SPARK STUDIO',
       stage: lang === 'vi' ? 'GIAI ĐOẠN 02 — SÁNG TẠO & SẢN XUẤT' : 'STAGE 02 — CREATE & PRODUCE',
-      tags: lang === 'vi'
-        ? 'RECORDING · PRODUCTION · MIX & MASTER · MEDIA'
-        : 'RECORDING · PRODUCTION · MIX & MASTER · MEDIA',
+      tags: 'RECORDING · MUSIC PRODUCTION · MIXING & MASTERING · MEDIA',
       positioning: lang === 'vi'
-        ? 'TỪ Ý TƯỞNG ĐẦU TIÊN ĐẾN BẢN NHẠC HOÀN CHỈNH.'
-        : 'FROM YOUR FIRST IDEA TO YOUR FINISHED RECORD.',
+        ? 'TỪ Ý TƯỞNG ĐẾN SẢN PHẨM ÂM NHẠC HOÀN CHỈNH.'
+        : 'FROM AN IDEA TO A FINISHED MUSIC PRODUCTION.',
       desc: lang === 'vi'
-        ? 'Nơi các bạn trẻ và nhà sản xuất biến giai điệu phác thảo thành sản phẩm âm nhạc tiêu chuẩn thương mại. Phòng thu Neve, vocal booth, micro Neumann và hệ thống media hình ảnh đồng bộ.'
-        : 'Where emerging creators turn melodic sketches into commercial-grade sound. Neve signal paths, dedicated tracking booths, Neumann microphones, and synchronized visual media.',
+        ? 'Không gian sản xuất âm nhạc dành cho nghệ sĩ, nhà sản xuất và thương hiệu. Spark Studio kết hợp đội ngũ chuyên môn với hệ thống thiết bị thu âm, xử lý tín hiệu analog và kiểm âm chuyên nghiệp, đồng hành cùng bạn từ bản thu đầu tiên đến sản phẩm âm nhạc hoàn chỉnh.'
+        : 'A music production space for artists, producers and brands. Spark Studio brings together an expert team with professional recording equipment, analog signal processing and studio monitoring, supporting you from your first recording to a finished music production.',
       img: ASSETS.studioMain,
       ctaText: lang === 'vi' ? 'ĐẶT LỊCH PHÒNG THU ↗' : 'BOOK A RECORDING SESSION ↗',
       action: () => openBooking('recording'),
-      isRoute: false,
     },
     {
       num: '03',
@@ -71,7 +64,6 @@ export const MinimalEcosystem: React.FC<MinimalEcosystemProps> = () => {
       img: ASSETS.artistLyra,
       ctaText: lang === 'vi' ? 'ĐẶT LỊCH THỬ GIỌNG ↗' : 'BOOK VOICE AUDITION ↗',
       action: () => openBooking('vocal'),
-      isRoute: false,
     },
   ];
 
@@ -179,30 +171,21 @@ export const MinimalEcosystem: React.FC<MinimalEcosystemProps> = () => {
                   </p>
 
                   <div className="pt-4">
-                    {pillar.isRoute ? (
-                      <Link
-                        to={pillar.href!}
-                        className="inline-flex items-center gap-2 font-condensed text-xs tracking-[0.28em] uppercase text-[#0A0A0A] py-2 relative group font-bold"
-                      >
-                        <span className="group-hover:text-[#7C3AED] transition-colors duration-300">
-                          {pillar.ctaText}
-                        </span>
-                        <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#0A0A0A] group-hover:bg-[#7C3AED] transition-colors duration-300" />
-                      </Link>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={pillar.action!}
-                        className="inline-flex items-center gap-2 font-condensed text-xs tracking-[0.28em] uppercase text-[#0A0A0A] py-2 relative group font-bold"
-                      >
-                        <span className="group-hover:text-[#7C3AED] transition-colors duration-300">
-                          {pillar.ctaText}
-                        </span>
-                        <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#0A0A0A] group-hover:bg-[#7C3AED] transition-colors duration-300" />
-                      </button>
-                    )}
+                    <button
+                      type="button"
+                      onClick={pillar.action}
+                      className="inline-flex items-center gap-2 font-condensed text-xs tracking-[0.28em] uppercase text-[#0A0A0A] py-2 relative group font-bold"
+                    >
+                      <span className="group-hover:text-[#7C3AED] transition-colors duration-300">
+                        {pillar.ctaText}
+                      </span>
+                      <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#0A0A0A] group-hover:bg-[#7C3AED] transition-colors duration-300" />
+                    </button>
                   </div>
                 </div>
+                {pillar.id === 'studio' && (
+                  <StudioEquipmentSpotlight className="lg:col-span-12 lg:order-3" />
+                )}
               </motion.div>
             );
           })}

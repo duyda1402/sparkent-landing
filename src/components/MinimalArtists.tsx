@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { ARTISTS_DATA } from '@/lib/data';
 import { ImageWithFallback } from './ImageWithFallback';
 import { useLanguage, Lang } from '@/lib/LanguageContext';
@@ -74,7 +73,7 @@ export const MinimalArtists: React.FC<MinimalArtistsProps> = () => {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: idx * 0.14, duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Link to={`/artists/${artist.slug}`} className="group block">
+              <div className="group block">
                 {/* Large Editorial Portrait on white canvas */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm bg-white border border-[#E5E5E5] shadow-[0_16px_50px_rgba(0,0,0,0.06)]">
                   <ImageWithFallback
@@ -103,7 +102,7 @@ export const MinimalArtists: React.FC<MinimalArtistsProps> = () => {
                     →
                   </span>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>

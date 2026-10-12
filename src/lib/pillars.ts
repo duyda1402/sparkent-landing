@@ -35,6 +35,7 @@ export interface PillarData {
   subEn: string;
   summaryVi: string;
   summaryEn: string;
+  leadTitle?: { vi: string; en: string };
   leadVi: string;
   leadEn: string;
   /** Thumbnail in the home intro accordion */
@@ -72,22 +73,26 @@ export const PILLARS: PillarData[] = [
     num: '01',
     word: 'LEARN',
     unit: 'SPARK ACADEMY',
-    subVi: 'HỌC HỎI & NỀN TẢNG',
-    subEn: 'CRAFT & FOUNDATION',
+    subVi: 'XÂY DỰNG NỀN TẢNG ÂM NHẠC',
+    subEn: 'BUILD YOUR MUSICAL FOUNDATION',
     summaryVi: 'Piano, thanh nhạc, guitar, music producer, mix & master. Xây nền tảng bài bản cùng Spark Academy.',
     summaryEn: 'Piano, vocal, guitar, music production, mix & master. Build a solid foundation with Spark Academy.',
-    leadVi: 'Mọi nghệ sĩ đều bắt đầu từ nền tảng. Tại Spark Academy, bạn học kỹ thuật và nhạc lý cùng những người đang làm nghề.',
-    leadEn: 'Every artist starts with the fundamentals. At Spark Academy, you learn technique and theory from working musicians.',
+    leadTitle: {
+      vi: 'HỌC NHẠC BÀI BẢN. PHÁT TRIỂN CHẤT RIÊNG.',
+      en: 'LEARN MUSIC WITH A SOLID FOUNDATION. DEVELOP YOUR OWN SOUND.',
+    },
+    leadVi: 'Từ Piano, Thanh nhạc đến Music Production và Mixing & Mastering, Spark Academy giúp bạn phát triển kỹ năng âm nhạc qua lộ trình học tập bài bản, thực hành trực tiếp và định hướng phù hợp với mục tiêu của mình.',
+    leadEn: 'From Piano and Vocal Training to Music Production and Mixing & Mastering, Spark Academy helps you develop your musical skills through a structured learning path, hands-on practice and guidance tailored to your goals.',
     image: ASSETS.studioVocalBooth,
     imageAltVi: 'Phòng piano tại Spark',
     imageAltEn: 'The piano room at Spark',
     heroImage: ASSETS.studioVocalBooth,
     heroFocus: '50% 55%',
     facts: [
-      { labelVi: 'DÀNH CHO', labelEn: 'FOR', valueVi: 'Người mới bắt đầu, ca sĩ, nhạc công, nhà sản xuất và nghệ sĩ độc lập.', valueEn: 'Beginners, singers, musicians, producers and independent artists.' },
-      { labelVi: 'BỘ MÔN', labelEn: 'DISCIPLINES', valueVi: 'Piano, thanh nhạc, guitar, music producer, mix & master.', valueEn: 'Piano, vocal, guitar, music production, mix & master.' },
-      { labelVi: 'HÌNH THỨC', labelEn: 'FORMAT', valueVi: 'Học kỹ thuật, thực hành tại phòng thu và rèn luyện biểu diễn.', valueEn: 'Technique, studio practice and performance training.' },
-      { labelVi: 'LỘ TRÌNH', labelEn: 'PATHWAY', valueVi: 'Từ nền tảng đến sản xuất và biểu diễn thực tế.', valueEn: 'From fundamentals to real production and performance.' },
+      { labelVi: 'DÀNH CHO', labelEn: 'FOR', valueVi: 'Mọi lứa tuổi, từ người yêu âm nhạc đến nghệ sĩ theo đuổi con đường chuyên nghiệp.', valueEn: 'All ages, from music lovers to artists pursuing a professional career.' },
+      { labelVi: 'BỘ MÔN', labelEn: 'DISCIPLINES', valueVi: 'Piano, Thanh nhạc, Guitar, Music Production, Mixing & Mastering.', valueEn: 'Piano, Vocal Training, Guitar, Music Production, Mixing & Mastering.' },
+      { labelVi: 'HÌNH THỨC', labelEn: 'FORMAT', valueVi: 'Đào tạo trong môi trường chuyên nghiệp', valueEn: 'Training in a professional environment' },
+      { labelVi: 'LỘ TRÌNH', labelEn: 'PATHWAY', valueVi: 'Học phù hợp với từng trình độ, từ làm quen với âm nhạc đến rèn luyện chuyên sâu và thực hành thực tế.', valueEn: 'Learning tailored to each level, from an introduction to music to advanced training and hands-on practice.' },
     ],
     primaryCta: ACADEMY_LINK,
     secondaryCta: TRIAL_BOOKING,
@@ -117,8 +122,8 @@ export const PILLARS: PillarData[] = [
     heroImage: ASSETS.studioMain,
     heroFocus: '50% 45%',
     facts: [
-      { labelVi: 'DỊCH VỤ', labelEn: 'SERVICES', valueVi: 'Thu âm, sản xuất, mix & master, hình ảnh và MV.', valueEn: 'Recording, production, mix & master, visuals and music videos.' },
-      { labelVi: 'THIẾT BỊ', labelEn: 'EQUIPMENT', valueVi: 'Signal path Neve, micro Neumann, vocal booth riêng.', valueEn: 'Neve signal path, Neumann microphones, dedicated vocal booth.' },
+      { labelVi: 'DỊCH VỤ', labelEn: 'SERVICES', valueVi: 'Sáng tác, thu âm, sản xuất âm nhạc, mixing & mastering, sản xuất MV và nội dung hình ảnh.', valueEn: 'Songwriting, recording, music production, mixing & mastering, music video production and visual content.' },
+      { labelVi: 'THIẾT BỊ', labelEn: 'EQUIPMENT', valueVi: 'Hệ thống thiết bị thu âm, xử lý tín hiệu analog và kiểm âm chuyên nghiệp, với những thiết bị tiêu biểu từ Neumann, Manley, Neve, Universal Audio, Tube-Tech và Genelec — phục vụ toàn bộ quy trình sản xuất âm nhạc tại Spark Studio.', valueEn: 'Professional recording, analog signal processing and monitoring systems, featuring equipment from Neumann, Manley, Neve, Universal Audio, Tube-Tech and Genelec — supporting the entire music production workflow at Spark Studio.' },
       { labelVi: 'QUY TRÌNH', labelEn: 'PROCESS', valueVi: 'Từ ý tưởng, sản xuất và thu âm đến mix & master.', valueEn: 'From idea and production through recording, mix and master.' },
       { labelVi: 'HÌNH ẢNH', labelEn: 'VISUALS', valueVi: 'MV, visualizer và hình ảnh truyền thông.', valueEn: 'Music videos, visualizers and promotional imagery.' },
     ],
@@ -206,7 +211,7 @@ export const getPillar = (slug?: string): PillarData | undefined =>
 
 export const pillarPath = (slug: PillarSlug) => `/about/${slug}`;
 
-// LEARN: the five Academy disciplines (copy mirrors pages/Academy)
+// LEARN: four Academy categories, with Piano and Guitar grouped as Instruments.
 export interface Discipline {
   id: string;
   titleVi: string;
@@ -216,124 +221,116 @@ export interface Discipline {
   outcomesVi: string[];
   outcomesEn: string[];
   image: string;
-  service: BookingServiceType;
+  service?: BookingServiceType;
 }
 
 export const LEARN_DISCIPLINES: Discipline[] = [
   {
     id: '01',
-    titleVi: 'PIANO',
-    titleEn: 'PIANO',
-    subVi: 'Cổ điển và Jazz đương đại, hòa thanh và cảm thụ phím đàn.',
-    subEn: 'Classical and contemporary jazz touch, harmonic voicing and performance posture.',
+    titleVi: 'NHẠC CỤ',
+    titleEn: 'INSTRUMENTS',
+    subVi: 'Học Piano, Guitar và phát triển tư duy âm nhạc trong môi trường đào tạo chuyên nghiệp, với hệ thống nhạc cụ và thiết bị chất lượng cao.',
+    subEn: 'Learn Piano and Guitar and develop your musical thinking in a professional training environment with high-quality instruments and equipment.',
     outcomesVi: [
-      'Kỹ thuật ngón, thị tấu và phản xạ hợp âm đương đại',
-      'Cấu trúc hòa thanh ứng dụng trong sản xuất âm nhạc',
-      'Thực hành biểu diễn và tương tác với ban nhạc trực tiếp',
+      'Piano, Acoustic Guitar và Electric Guitar',
+      'Hệ thống nhạc cụ và thiết bị âm thanh cao cấp phục vụ học tập, luyện tập và biểu diễn',
+      'Phát triển kỹ thuật, cảm âm, nhịp điệu và khả năng biểu diễn',
+      'Thực hành trong môi trường studio, kết nối với sáng tạo và sản xuất âm nhạc',
     ],
     outcomesEn: [
-      'Contemporary finger technique, sight reading and harmonic reflex',
-      'Harmonic structures applied to modern music production',
-      'Live performance dynamics and real band accompaniment',
+      'Piano, Acoustic Guitar and Electric Guitar',
+      'Premium instruments and audio equipment for learning, practice and performance',
+      'Develop technique, aural skills, rhythm and performance ability',
+      'Hands-on studio practice connected to creativity and music production',
     ],
     image: ASSETS.studioVocalBooth,
-    service: 'piano',
   },
   {
     id: '02',
     titleVi: 'THANH NHẠC',
     titleEn: 'VOCAL',
-    subVi: 'Giải phẫu thanh nhạc, kỹ thuật hơi thở, phong thái và bản sắc giọng.',
-    subEn: 'Vocal anatomy, breath control, stage presence and a unique vocal identity.',
+    subVi: 'Phát triển kỹ thuật thanh nhạc, làm chủ giọng hát và định hình màu sắc riêng qua lộ trình đào tạo bài bản và kết hợp thực hành',
+    subEn: 'Develop vocal technique, master your voice and shape your unique vocal character through structured training combined with hands-on practice.',
     outcomesVi: [
-      'Làm chủ cột hơi, cao độ, mở rộng quãng giọng an toàn',
-      'Xử lý ca từ và cảm xúc trong phòng thu chuyên nghiệp',
-      'Định hình màu giọng đặc trưng của từng nghệ sĩ',
+      'Làm chủ hơi thở, cao độ, cộng hưởng và mở rộng quãng giọng',
+      'Phát triển màu sắc giọng hát, khả năng xử lý ca từ và biểu đạt cảm xúc',
+      'Thực hành thu vocal với hệ thống micro, thiết bị âm thanh và không gian studio chuyên nghiệp',
+      'Rèn luyện kỹ năng biểu diễn và ứng dụng thanh nhạc vào sản phẩm âm nhạc thực tế',
     ],
     outcomesEn: [
-      'Breath support, pitch accuracy and safe range expansion',
-      'Studio microphone delivery and emotional phrasing',
-      'Shaping a distinct signature tone',
+      'Master breath control, pitch and resonance, and expand your vocal range',
+      'Develop your vocal character, lyrical phrasing and emotional expression',
+      'Practice vocal recording with professional microphones, audio equipment and studio spaces',
+      'Build performance skills and apply vocal techniques to real music projects',
     ],
     image: ASSETS.studioMastering,
     service: 'vocal',
   },
   {
     id: '03',
-    titleVi: 'GUITAR',
-    titleEn: 'GUITAR',
-    subVi: 'Acoustic và Electric Guitar, phong cách đệm hát và solo biểu diễn.',
-    subEn: 'Acoustic and electric guitar, accompaniment styles and expressive soloing.',
+    titleVi: 'MUSIC PRODUCTION',
+    titleEn: 'MUSIC PRODUCTION',
+    subVi: 'Phát triển ý tưởng thành sản phẩm âm nhạc hoàn chỉnh thông qua phối khí, thiết kế âm thanh và thực hành sản xuất trên hệ thống thiết bị chuyên nghiệp.',
+    subEn: 'Develop ideas into complete music productions through arrangement, sound design and hands-on production with professional equipment.',
     outcomesVi: [
-      'Hệ thống gam, pentatonic, modal và rải ngón chuẩn xác',
-      'Đệm hát đương đại, solo giai điệu và sáng tác riff',
-      'Thu âm guitar mộc và guitar điện chuẩn studio',
+      'Làm chủ DAW, MIDI, nhạc cụ ảo và quy trình sản xuất âm nhạc',
+      'Phát triển ý tưởng, phối khí và thiết kế beat',
+      'Lựa chọn âm sắc, xây dựng cấu trúc và phát triển bản phối',
+      'Thực hành trên hệ thống studio chuyên nghiệp, hoàn thiện sản phẩm âm nhạc thực tế',
     ],
     outcomesEn: [
-      'Scale systems, chord melody voicings and articulate picking',
-      'Contemporary rhythm backing, soloing and riff writing',
-      'Acoustic and electric guitar tracking in professional rooms',
-    ],
-    // TODO: replace with a guitar photo when the client provides one
-    image: ASSETS.projectIgnition,
-    service: 'guitar',
-  },
-  {
-    id: '04',
-    titleVi: 'MUSIC PRODUCER',
-    titleEn: 'MUSIC PRODUCER',
-    subVi: 'Biến ý tưởng thành sản phẩm âm nhạc hoàn chỉnh: arrangement, sound selection và production.',
-    subEn: 'Turn an idea into a complete production: arrangement, sound selection and production.',
-    outcomesVi: [
-      'Quy trình làm việc trên DAW chuyên nghiệp',
-      'Cấu trúc arrangement, chọn âm sắc và thiết kế beat',
-      'Thu âm nền tảng và hoàn thiện một finished track',
-    ],
-    outcomesEn: [
-      'Production fundamentals and a professional DAW workflow',
-      'Arrangement, sound selection and beat craft',
-      'Recording fundamentals and a finished track',
+      'Master DAWs, MIDI, virtual instruments and the music production workflow',
+      'Develop ideas, arrangements and beats',
+      'Select sounds, build song structures and develop arrangements',
+      'Practice with a professional studio setup and complete real music productions',
     ],
     image: ASSETS.studioMain,
     service: 'producer',
   },
   {
-    id: '05',
-    titleVi: 'MIX & MASTER',
-    titleEn: 'MIX & MASTER',
-    subVi: 'Hoàn thiện âm thanh từ cân bằng, xử lý, không gian đến bản master sẵn sàng phát hành.',
-    subEn: 'Finish your sound, from balance, processing and space to a release-ready master.',
+    id: '04',
+    titleVi: 'MIXING & MASTERING',
+    titleEn: 'MIXING & MASTERING',
+    subVi: 'Làm chủ quy trình mixing và mastering, từ cân bằng âm thanh, định hình không gian đến hoàn thiện bản thu với chất lượng chuyên nghiệp trên hệ thống thiết bị studio cao cấp.',
+    subEn: 'Master the mixing and mastering workflow, from balancing sound and shaping space to finishing professional-quality recordings with premium studio equipment.',
     outcomesVi: [
-      'EQ, compression, reverb và delay',
-      'Vocal processing, chiều sâu không gian và trường âm stereo',
-      'Kiểm soát dynamics và chuẩn hóa bản master',
+      'Làm chủ EQ, compression, reverb, delay, automation và các công cụ xử lý âm thanh',
+      'Xử lý vocal, cân bằng nhạc cụ và xây dựng chiều sâu, không gian stereo',
+      'Kiểm soát dynamics, cân bằng tonal và tối ưu loudness cho bản master',
+      'Thực hành trên hệ thống monitoring và thiết bị xử lý âm thanh chuyên nghiệp, hoàn thiện sản phẩm theo yêu cầu phát hành',
     ],
     outcomesEn: [
-      'EQ, compression, reverb and delay',
-      'Vocal processing, spatial depth and stereo image',
-      'Dynamics control and a release-ready master',
+      'Master EQ, compression, reverb, delay, automation and audio processing tools',
+      'Process vocals, balance instruments and build depth and stereo space',
+      'Control dynamics, balance tone and optimize loudness for the master',
+      'Practice with professional monitoring systems and audio processing equipment to finish productions that meet release requirements',
     ],
     image: ASSETS.studioAcoustic,
     service: 'mixmaster',
   },
 ];
 
-// LEARN: the Academy method (copy mirrors pages/Academy)
+// LEARN: the four stages of the Academy learning journey.
 export const LEARN_METHOD = [
   {
-    titleVi: 'HỌC HỎI', titleEn: 'STUDY', tagVi: 'NỀN TẢNG KỸ NGHỆ', tagEn: 'TECHNICAL MASTERY',
-    descVi: 'Xây dựng nền tảng nhạc lý, giải phẫu kỹ thuật và thói quen thực hành bền vững cùng các chuyên gia hàng đầu.',
-    descEn: 'Build music theory, physical technique and sustainable practice habits, guided by active creators.',
+    titleVi: 'HỌC HỎI', titleEn: 'LEARN', tagVi: 'BUILD YOUR FOUNDATION', tagEn: 'BUILD YOUR FOUNDATION',
+    descVi: 'Xây dựng nền tảng nhạc lý, kỹ thuật và tư duy âm nhạc với lộ trình phù hợp cùng sự hướng dẫn chuyên môn.',
+    descEn: 'Build a foundation in music theory, technique and musical thinking through a suitable learning path and expert guidance.',
   },
   {
-    titleVi: 'SÁNG TẠO', titleEn: 'PRODUCE', tagVi: 'SÁNG TẠO THỰC CHIẾN', tagEn: 'REAL PRODUCTION',
-    descVi: 'Áp dụng kiến thức trực tiếp vào sản xuất âm nhạc thực tế trong không gian phòng thu thương mại Spark Studio.',
-    descEn: 'Apply what you learn straight away in real sessions inside Spark Studio’s commercial rooms.',
+    titleVi: 'THỰC HÀNH', titleEn: 'PRACTICE', tagVi: 'PRACTICE IN STUDIO', tagEn: 'PRACTICE IN STUDIO',
+    descVi: 'Rèn luyện kỹ năng với nhạc cụ, thiết bị âm thanh và hệ thống studio chuyên nghiệp, gắn với quy trình làm việc thực tế.',
+    descEn: 'Develop your skills with instruments, audio equipment and professional studio systems through real-world workflows.',
   },
   {
-    titleVi: 'TRÌNH DIỄN', titleEn: 'PERFORM', tagVi: 'ĐỊNH HÌNH BẢN SẮC', tagEn: 'ARTISTIC IDENTITY',
-    descVi: 'Phát triển sự tự tin biểu diễn, bản sắc nghệ sĩ và phong thái chuyên nghiệp trước công chúng và sân khấu.',
-    descEn: 'Grow stage confidence, artistic identity and a professional presence in front of an audience.',
+    titleVi: 'SÁNG TẠO', titleEn: 'CREATE', tagVi: 'CREATE YOUR WORK', tagEn: 'CREATE YOUR WORK',
+    descVi: 'Ứng dụng kiến thức để tạo ra sản phẩm âm nhạc, phát triển kỹ năng biểu diễn hoặc hoàn thiện dự án cá nhân.',
+    descEn: 'Apply your knowledge to create music, develop performance skills or complete a personal project.',
+  },
+  {
+    titleVi: 'PHÁT TRIỂN', titleEn: 'GROW', tagVi: 'GROW YOUR OWN WAY', tagEn: 'GROW YOUR OWN WAY',
+    descVi: 'Tiếp tục nâng cao chuyên môn, định hình bản sắc và lựa chọn hướng đi phù hợp — từ đam mê cá nhân đến con đường nghệ sĩ chuyên nghiệp.',
+    descEn: 'Continue developing your expertise, shaping your identity and choosing the right path — from a personal passion to a professional career as an artist.',
   },
 ];
 
