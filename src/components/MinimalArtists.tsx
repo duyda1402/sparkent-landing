@@ -26,7 +26,7 @@ export const MinimalArtists: React.FC<MinimalArtistsProps> = () => {
             transition={{ duration: 1 }}
             className="font-condensed text-xs tracking-[0.32em] uppercase text-[#7C3AED] block mb-6 font-bold"
           >
-            {lang === 'vi' ? '06 / NGHỆ SĨ' : '06 / ARTISTS'}
+            {lang === 'vi' ? '04 / NGHỆ SĨ' : '04 / ARTISTS'}
           </motion.span>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E5E5E5] pb-10">
