@@ -111,6 +111,11 @@ const PillarHero: React.FC<{ pillar: PillarData }> = ({ pillar }) => {
             transition={{ duration: 1, delay: 0.55, ease: EASE }}
             className="lg:col-span-4 lg:pb-4"
           >
+            {pillar.leadTitle && (
+              <h2 className="mb-4 font-condensed text-2xl md:text-3xl font-bold uppercase leading-tight text-[#F4F1E8]">
+                {vi ? pillar.leadTitle.vi : pillar.leadTitle.en}
+              </h2>
+            )}
             <p className="max-w-[40ch] text-base md:text-lg leading-relaxed text-[#F4F1E8]/80">{vi ? pillar.leadVi : pillar.leadEn}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <CtaButton cta={pillar.primaryCta} className={BTN_LIGHT} />
@@ -131,17 +136,27 @@ const FACT_CELL = [
   'border-t sm:border-l sm:pl-8 lg:border-t-0',
 ];
 
+// Studio descriptions need wider columns, especially the equipment overview.
+const STUDIO_FACT_CELL = [
+  'md:pr-10 lg:pr-14',
+  'border-t md:border-t-0 md:border-l md:pl-10 lg:pl-14',
+  'border-t md:pr-10 lg:pr-14',
+  'border-t md:border-l md:pl-10 lg:pl-14',
+];
+
 const FactsStrip: React.FC<{ pillar: PillarData }> = ({ pillar }) => {
   const { lang } = useLanguage();
   const vi = lang === 'vi';
+  const isStudio = pillar.slug === 'create';
+  const cellClasses = isStudio ? STUDIO_FACT_CELL : FACT_CELL;
 
   return (
     <section className="w-full bg-white border-b border-[#E5E5E5] px-6 md:px-12 lg:px-20">
-      <dl className="max-w-[1720px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <dl className={`max-w-[1720px] mx-auto grid grid-cols-1 ${isStudio ? 'md:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-4'}`}>
         {pillar.facts.map((fact, i) => (
-          <div key={fact.labelEn} className={`py-8 lg:py-11 border-[#E5E5E5] ${FACT_CELL[i] ?? ''}`}>
-            <dt className="font-condensed text-xs font-bold tracking-[0.28em] text-[#7C3AED]">{vi ? fact.labelVi : fact.labelEn}</dt>
-            <dd className="mt-3 text-base md:text-[17px] leading-relaxed text-[#0A0A0A]">
+          <div key={fact.labelEn} className={`min-w-0 py-8 lg:py-11 border-[#E5E5E5] ${cellClasses[i] ?? ''}`}>
+            <dt className={`font-condensed font-bold tracking-[0.28em] text-[#7C3AED] ${isStudio ? 'text-sm' : 'text-xs'}`}>{vi ? fact.labelVi : fact.labelEn}</dt>
+            <dd className={`mt-3 leading-relaxed text-[#0A0A0A] ${isStudio ? 'text-base md:text-lg' : 'text-base md:text-[17px]'}`}>
               {vi ? fact.valueVi : fact.valueEn}
             </dd>
           </div>

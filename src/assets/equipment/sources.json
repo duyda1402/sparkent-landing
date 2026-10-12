@@ -1,0 +1,52 @@
+[
+  {
+    "file": "neumann-m149.webp",
+    "productPage": "https://www.neumann.com/en-de/products/microphones/m-149-v-set",
+    "originalImage": "https://assets.sennheiser.com/assets/M-149-Tube_Neumann-Studio-Tube-Microphone_M.png/Zz02MGUwOTc3ZWU3YWIxMWYwOTQ2OWNlM2Q3NWM0MGYwNw==?width=730&format=webp&quality=80",
+    "usage": "Product reference image; not a photograph of the equipment installed at Spark Studio."
+  },
+  {
+    "file": "manley-voxbox.webp",
+    "productPage": "https://www.manley.com/products/pro-audio/channel-strips/voxbox",
+    "originalImage": "https://cms.manley.com/uploads/fullhd_Manley_Labs_VOX_BOX_front_02_R_fc2eae7704.avif",
+    "usage": "Product reference image; not a photograph of the equipment installed at Spark Studio."
+  },
+  {
+    "file": "apollo-x8.webp",
+    "productPage": "https://www.uaudio.com/products/apollo-x8",
+    "originalImage": "https://www.uaudio.com/cdn/shop/files/apollo_x8_gallery_1_d56a785b-037d-45df-a006-01c858e991fa.png?v=1742246438&width=800",
+    "usage": "Product reference image; not a photograph of the equipment installed at Spark Studio."
+  },
+  {
+    "file": "ua-1176.webp",
+    "productPage": "https://www.uaudio.com/products/1176ln-classic-limiting-amplifier",
+    "originalImage": "https://www.uaudio.com/cdn/shop/files/1176ln_classic_limiting_amplifier_gallery_1.png?v=1713364192&width=800",
+    "usage": "Product reference image; not a photograph of the equipment installed at Spark Studio."
+  },
+  {
+    "file": "tube-tech-pe1c.webp",
+    "productPage": "https://www.tube-tech.com/pe-1c-program-equalizer/",
+    "originalImage": "https://www.tube-tech.com/wp-content/uploads/2017/06/PE-1C-main-2.jpg",
+    "usage": "Product reference image; not a photograph of the equipment installed at Spark Studio."
+  },
+  {
+    "file": "genelec-8050b.webp",
+    "displayFile": "genelec-8050b-transparent.png",
+    "edit": "Background removed using built-in imagegen. Prompt: Remove only the dark background and external floor shadow; preserve the Genelec speaker, perspective, logo, green LED and lighting, with genuine transparent alpha.",
+    "productPage": "https://www.genelec.com/en/8050b",
+    "originalImage": "https://images.ctfassets.net/4zjnzn055a4v/52cZxSab5a1xMqWoaconii/ee86b808829fa7ef32cdb5497a72b9c6/8050_main_image.jpg?w=800",
+    "usage": "Product reference image; not a photograph of the equipment installed at Spark Studio."
+  },
+  {
+    "file": "dt1990-pro.webp",
+    "productPage": "https://www.gear4music.be/de/Recording-and-Computer/beyerdynamic-DT-1990-Pro-Offener-Kopfhorer/26JB",
+    "originalImage": "https://d1aeri3ty3izns.cloudfront.net/media/39/398667/1200/preview.jpg",
+    "usage": "Product reference image; not a photograph of the equipment installed at Spark Studio."
+  },
+  {
+    "file": "mac-studio.webp",
+    "productPage": "https://www.apple.com/mac-studio/",
+    "originalImage": "https://www.apple.com/v/mac-studio/o/images/overview/hero/static_front__fmvxob6uyxiu_large.jpg",
+    "usage": "Product reference image; not a photograph of the equipment installed at Spark Studio."
+  }
+]

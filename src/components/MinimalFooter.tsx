@@ -13,17 +13,17 @@ export const MinimalFooter: React.FC<MinimalFooterProps> = () => {
     { label: 'TRANG CHỦ', href: '#hero' },
     { label: 'GIỚI THIỆU', href: '#intro' },
     { label: 'HỆ SINH THÁI', href: '#ecosystem' },
-    { label: 'DỰ ÁN', href: '#works' },
+    // { label: 'DỰ ÁN', href: '#works' }, // Restore when project content is ready.
     { label: 'NGHỆ SĨ', href: '#artists' },
-    { label: 'TIN TỨC', href: '#journal' },
+    // { label: 'TIN TỨC', href: '#journal' }, // Restore when news content is ready.
     { label: 'LIÊN HỆ', href: '#contact' },
   ] : [
     { label: 'HOME', href: '#hero' },
     { label: 'ABOUT', href: '#intro' },
     { label: 'ECOSYSTEM', href: '#ecosystem' },
-    { label: 'WORKS', href: '#works' },
+    // { label: 'WORKS', href: '#works' }, // Restore when project content is ready.
     { label: 'ARTISTS', href: '#artists' },
-    { label: 'JOURNAL', href: '#journal' },
+    // { label: 'JOURNAL', href: '#journal' }, // Restore when news content is ready.
     { label: 'CONTACT', href: '#contact' },
   ];
 
