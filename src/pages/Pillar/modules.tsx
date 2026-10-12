@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, Plus } from 'lucide-react';
 import { ImageWithFallback } from '@/components/ImageWithFallback';
+import { StudioEquipmentSection } from '@/components/StudioEquipmentSection';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useBookingModal } from '@/lib/BookingContext';
 import { ARTISTS_DATA } from '@/lib/data';
@@ -62,7 +63,7 @@ export const LearnModule: React.FC = () => {
     <>
       <section className={`${SECTION} bg-[#F6F6F4]`}>
         <div className="max-w-[1720px] mx-auto">
-          <SectionHeading lead={vi ? 'NĂM BỘ MÔN, ' : 'FIVE DISCIPLINES, '} accent={vi ? 'MỘT NỀN TẢNG.' : 'ONE FOUNDATION.'} />
+          <SectionHeading lead={vi ? 'BỐN BỘ MÔN, ' : 'FOUR DISCIPLINES, '} accent={vi ? 'MỘT NỀN TẢNG.' : 'ONE FOUNDATION.'} />
           <Lead className="mt-6">
             {vi
               ? 'Mỗi khóa học đi từ nền tảng đến biểu diễn và sản xuất thực tế. Chọn một bộ môn để xem bạn sẽ học gì.'
@@ -152,10 +153,17 @@ export const LearnModule: React.FC = () => {
         </div>
       </section>
 
-      <section className={`${SECTION} bg-white`}>
+      <section className="w-full px-6 md:px-12 lg:px-20 py-20 md:py-24 bg-white">
         <div className="max-w-[1720px] mx-auto">
-          <SectionHeading lead={vi ? 'HỌC ĐI ĐÔI ' : 'LEARN '} accent={vi ? 'VỚI HÀNH.' : 'BY DOING.'} />
-          <ol className="mt-14 md:mt-20 border-t border-[#E5E5E5]">
+          <h2 className="font-condensed text-[clamp(2.75rem,5.6vw,5.5rem)] font-extrabold uppercase leading-[1.02] tracking-[-0.015em] text-[#0A0A0A]">
+            {vi ? 'HỌC ĐỂ LÀM ĐƯỢC.' : 'LEARN TO MAKE IT HAPPEN.'}
+          </h2>
+          <p className="mt-5 max-w-[75ch] text-base md:text-xl leading-relaxed text-[#666666]">
+            {vi
+              ? 'Từ nền tảng kỹ thuật đến thực hành, sáng tạo và phát triển con đường âm nhạc của riêng bạn.'
+              : 'From technical foundations to practice, creativity and developing your own path in music.'}
+          </p>
+          <ol className="mt-8 md:mt-10 border-t border-[#E5E5E5]">
             {LEARN_METHOD.map((m, i) => (
               <motion.li
                 key={m.titleEn}
@@ -163,17 +171,17 @@ export const LearnModule: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.9, ease: EASE }}
-                className="group grid grid-cols-1 lg:grid-cols-12 items-baseline gap-x-10 gap-y-4 py-10 md:py-14 border-b border-[#E5E5E5]"
+                className="group grid grid-cols-[2.5rem_minmax(0,1fr)] md:grid-cols-[3rem_minmax(0,1fr)] items-baseline gap-x-3 md:gap-x-6 py-8 md:py-10 border-b border-[#E5E5E5] last:border-b-0"
               >
-                <span className="lg:col-span-1 font-condensed text-[13px] font-bold tracking-[0.2em] text-[#666666]">
+                <span className="font-condensed text-2xl md:text-[32px] font-bold leading-tight text-[#0A0A0A] transition-colors duration-300 group-hover:text-[#7C3AED]">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <span className="lg:col-span-6 font-condensed font-extrabold uppercase text-[clamp(3.25rem,7.5vw,6.5rem)] leading-[0.92] tracking-[-0.015em] text-[#0A0A0A] transition-colors duration-500 group-hover:text-[#7C3AED]">
-                  {vi ? m.titleVi : m.titleEn}
-                </span>
-                <div className="lg:col-span-5">
-                  <span className="font-condensed text-xs font-bold tracking-[0.28em] text-[#7C3AED]">{vi ? m.tagVi : m.tagEn}</span>
-                  <p className="mt-3 max-w-[44ch] text-base leading-relaxed text-[#555555]">{vi ? m.descVi : m.descEn}</p>
+                <div className="min-w-0">
+                  <h3 className="font-condensed text-[clamp(2rem,3vw,3rem)] font-bold uppercase leading-tight text-[#0A0A0A] transition-colors duration-300 group-hover:text-[#7C3AED]">
+                    {vi ? m.titleVi : m.titleEn}
+                  </h3>
+                  <span className="mt-2 block font-condensed text-sm md:text-base font-semibold tracking-[0.12em] text-[#7C3AED]">{vi ? m.tagVi : m.tagEn}</span>
+                  <p className="mt-3 max-w-[90ch] text-base md:text-lg leading-relaxed text-[#555555]">{vi ? m.descVi : m.descEn}</p>
                 </div>
               </motion.li>
             ))}
@@ -271,6 +279,7 @@ export const CreateModule: React.FC = () => {
           </div>
         </div>
       </section>
+      <StudioEquipmentSection />
     </>
   );
 };
@@ -334,14 +343,14 @@ export const DevelopModule: React.FC = () => {
                 transition={{ duration: 1, ease: EASE }}
                 className={`group min-w-0 ${i === 0 ? 'md:col-span-6' : 'md:col-span-5 md:col-start-8 md:mt-40'}`}
               >
-                <Link to={`/artists/${artist.slug}`} className="block overflow-hidden bg-[#141416]" tabIndex={-1} aria-hidden="true">
+                <div className="block overflow-hidden bg-[#141416]">
                   <ImageWithFallback
                     src={artist.portrait}
-                    alt=""
+                    alt={artist.name}
                     loading="lazy"
                     className="aspect-[4/5] w-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                   />
-                </Link>
+                </div>
                 <figcaption className="pt-5 flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
                   <div>
                     <p className="font-condensed text-[44px] leading-none font-extrabold text-[#0A0A0A]">{artist.name}</p>
@@ -349,7 +358,10 @@ export const DevelopModule: React.FC = () => {
                       {artist.role}, {artist.genre}
                     </p>
                   </div>
-                  <TextLink to={`/artists/${artist.slug}`}>{vi ? 'XEM HỒ SƠ' : 'VIEW PROFILE'}</TextLink>
+                  <span className="inline-flex items-center gap-2 min-h-[44px] font-condensed text-xs font-bold tracking-[0.26em] uppercase text-[#0A0A0A]">
+                    {vi ? 'XEM HỒ SƠ' : 'VIEW PROFILE'}
+                    <ArrowRight size={14} strokeWidth={1.8} aria-hidden="true" />
+                  </span>
                 </figcaption>
               </motion.figure>
             ))}
@@ -365,9 +377,10 @@ export const ReleaseModule: React.FC = () => {
   const { lang } = useLanguage();
   const vi = lang === 'vi';
 
-  const releases = ARTISTS_DATA.flatMap((artist) =>
-    artist.discography.slice(0, 2).map((rec) => ({ ...rec, artist })),
-  ).sort((a, b) => Number(b.year) - Number(a.year));
+  // Temporarily hidden until verified release data is available.
+  // const releases = ARTISTS_DATA.flatMap((artist) =>
+  //   artist.discography.slice(0, 2).map((rec) => ({ ...rec, artist })),
+  // ).sort((a, b) => Number(b.year) - Number(a.year));
 
   return (
     <>
@@ -412,7 +425,8 @@ export const ReleaseModule: React.FC = () => {
         </div>
       </section>
 
-      <section className={`${SECTION} bg-white`}>
+      {/* Released with Spark — temporarily hidden; restore with verified data. */}
+      {/* <section className={`${SECTION} bg-white`}>
         <div className="max-w-[1720px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
           <SectionHeading
             lead={vi ? 'ĐÃ PHÁT HÀNH ' : 'RELEASED '}
@@ -439,18 +453,17 @@ export const ReleaseModule: React.FC = () => {
                 <span className="hidden sm:block shrink-0 font-condensed text-xs font-bold tracking-[0.24em] uppercase text-[#666666] whitespace-pre">
                   {rec.type}  /  {rec.year}
                 </span>
-                <Link
-                  to={`/artists/${rec.artist.slug}`}
-                  aria-label={`${rec.title}, ${rec.artist.name}`}
-                  className="shrink-0 w-11 h-11 rounded-full border border-[#D4D4D4] flex items-center justify-center text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-white hover:border-[#0A0A0A] transition-colors duration-300"
+                <span
+                  aria-hidden="true"
+                  className="shrink-0 w-11 h-11 rounded-full border border-[#D4D4D4] flex items-center justify-center text-[#0A0A0A]"
                 >
                   <ArrowRight size={16} strokeWidth={1.6} aria-hidden="true" />
-                </Link>
+                </span>
               </li>
             ))}
           </ol>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

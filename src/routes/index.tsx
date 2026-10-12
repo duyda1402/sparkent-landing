@@ -3,7 +3,6 @@ import HomePage from '@/pages/Home/index';
 import AcademyPage from '@/pages/Academy/index';
 import BookingPage from '@/pages/Booking/index';
 import NotFoundPage from '@/pages/NotFound/index';
-import ArtistDetailPage from '@/pages/ArtistDetail/index';
 import ProjectDetailPage from '@/pages/ProjectDetail/index';
 import PillarPage from '@/pages/Pillar/index';
 import Layout from '@/components/Layout';
@@ -12,7 +11,7 @@ import Layout from '@/components/Layout';
  * Router Configuration with canonical clean URLs:
  * /academy -> Dedicated Spark Academy Page
  * /booking -> Dedicated Spark Booking Hub
- * /artists/:slug -> Dedicated Artist Profile
+ * /artists/* -> Artist profiles temporarily unavailable; source retained for later
  * /projects/:slug -> Dedicated Case Study
  * /about/:pillar -> Intro pillar pages (learn | create | develop | release)
  */
@@ -34,8 +33,10 @@ export const router = createBrowserRouter([
         element: <BookingPage />,
       },
       {
-        path: '/artists/:slug',
-        element: <ArtistDetailPage />,
+        // Keep artist profiles hidden even when someone enters a direct URL.
+        // The implementation remains in src/pages/ArtistDetail for future use.
+        path: '/artists/*',
+        element: <NotFoundPage />,
       },
       {
         // Keep the hidden project inaccessible through its direct URL.
